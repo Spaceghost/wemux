@@ -1,4 +1,4 @@
-![wemux: Multi-User Tmux Sessions Made Easy](http://i.imgur.com/iOjcz.png) 
+![wemux: Multi-User Tmux Sessions Made Easy](http://i.imgur.com/iOjcz.png)
 ********************************************************************************
 
 wemux enhances tmux to make multi-user terminal multiplexing both easier and
@@ -19,7 +19,7 @@ and notifications when users attach/detach.
 
 ## How To Install
   **IMPORTANT**: Wemux required tmux version >= 1.6
-  
+
 ### Homebrew (on OS X)
   If you have [Homebrew](http://mxcl.github.com/homebrew/) installed you can
   install wemux with a fairly simple:
@@ -92,7 +92,7 @@ and notifications when users attach/detach.
 #### wemux mirror
   Use `wemux mirror` to attach to server in read-only mode.
 #### wemux pair
-  Use `wemux pair` to attach to server in pair mode, allowing the client to 
+  Use `wemux pair` to attach to server in pair mode, allowing the client to
   control the terminal as well.
 #### wemux rogue
   Use `wemux rogue` to attach to server in rogue mode, which allows both editing
@@ -315,7 +315,7 @@ and notifications when users attach/detach.
   detach.
 
     wemux pair
-    
+
   **Option 4**: Automatically start the client in rogue mode but allow them to
   detach.
 
