@@ -27,13 +27,13 @@ and notifications when users attach/detach.
     brew install https://github.com/downloads/zolrath/wemux/wemux.rb
 
   The user that installed wemux will automatically be added to the wemux host list.
-  To change the host or add more hosts, edit `/usr/local/etc/wemux.conf` and add the
+  To change the host or add more hosts, edit `$HOME/usr/etc/wemux.conf` and add the
   username to the host_list array.
 
   Users in the host_list will be able to start new wemux servers, all other
   users will be wemux clients and join these servers.
 
-    $ vim /usr/local/etc/wemux.conf
+    $ vim $HOME/usr/etc/wemux.conf
          OR
     $ wemux conf
 
@@ -41,30 +41,30 @@ and notifications when users attach/detach.
 
 ### Manual Installation
   The rest of this readme will operate under the assumption you'll place wemux
-  in `wemux/` in your `/usr/local/share` directory. To make wemux available for
+  in `wemux/` in your `$HOME/usr/share` directory. To make wemux available for
   all users, perform the following steps, using sudo as required:
 
   Git clone this repo.
 
-    git clone git://github.com/zolrath/wemux.git /usr/local/share/wemux
+    git clone git://github.com/zolrath/wemux.git $HOME/usr/share/wemux
 
-  Symlink the `wemux` file into your $PATH via `/usr/local/bin/`,
+  Symlink the `wemux` file into your $PATH via `$HOME/usr/bin/`,
   being sure to use the full path.
 
-    ln -s /usr/local/share/wemux/wemux /usr/local/bin/wemux
+    ln -s $HOME/usr/share/wemux/wemux $HOME/usr/bin/wemux
 
-  **IMPORTANT**: Copy the `wemux.conf.example` file to `/usr/local/etc/wemux.conf`
+  **IMPORTANT**: Copy the `wemux.conf.example` file to `$HOME/usr/etc/wemux.conf`
 
-    cp /usr/local/share/wemux/wemux.conf.example /usr/local/etc/wemux.conf
+    cp $HOME/usr/share/wemux/wemux.conf.example $HOME/usr/etc/wemux.conf
 
   Then set a user to be a wemux host by adding their username to the host_list in
-  `/usr/local/etc/wemux.conf`. Users in the host_list will be able to start new wemux
+  `$HOME/usr/etc/wemux.conf`. Users in the host_list will be able to start new wemux
   servers, all other users will be wemux clients and join these servers.
 
-    vim /usr/local/etc/wemux.conf
+    vim $HOME/usr/etc/wemux.conf
     host_list=(zolrath brocksamson)
 
-  To upgrade to a new version of wemux return to the `/usr/local/share/wemux`
+  To upgrade to a new version of wemux return to the `$HOME/usr/share/wemux`
   directory and perform a `git pull`
 
 ## Host Commands
@@ -81,7 +81,7 @@ and notifications when users attach/detach.
   Use `wemux kick <username>` to kick an SSH user from the server and remove
   their wemux rogue sessions.
 #### wemux config
-  Use `wemux config` to open `/usr/local/etc/wemux.conf` in your $EDITOR.
+  Use `wemux config` to open `$HOME/usr/etc/wemux.conf` in your $EDITOR.
   Note this only works if you have the environment variable EDITOR configured.
 #### wemux
   When `wemux` is run without any arguments in host mode, it is just like
@@ -171,7 +171,7 @@ and notifications when users attach/detach.
   server along with the wemux command list.
 
   Changing servers can be enabled by setting `allow_server_change="true"` in
-  `/usr/local/etc/wemux.conf`
+  `$HOME/usr/etc/wemux.conf`
 
 ### Joining Different wemux Servers
   To change the wemux server run `wemux join <server>`. The name will be sanitized to contain no spaces or uppercase letters.
@@ -218,19 +218,19 @@ and notifications when users attach/detach.
   the number indicated next to the name in `wemux list`.
 
   Listing servers can be disabled by setting `allow_server_list="false"` in
-  `/usr/local/etc/wemux.conf`
+  `$HOME/usr/etc/wemux.conf`
 
 # Configuration
 ********************************************************************************
 
   There are a number of additional options that be configured in
-  `/usr/local/etc/wemux.conf`.  In most cases the only option that must be changed is the
+  `$HOME/usr/etc/wemux.conf`.  In most cases the only option that must be changed is the
   `host_list` array. To open your wemux configuration file, you can either open
-  `/usr/local/etc/wemux.conf` manually or run `wemux config`
+  `$HOME/usr/etc/wemux.conf` manually or run `wemux config`
 
 ### Host Mode
   To have an account act as host, ensure that you have added their username to the
-  `/usr/local/etc/wemux.conf` file's `host_list` array.
+  `$HOME/usr/etc/wemux.conf` file's `host_list` array.
 
     host_list=(zolrath hostusername brocksamson)
 
